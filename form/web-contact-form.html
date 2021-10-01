@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+<html>
+
+<!-- Mirrored from www.inoximporters.com/form/web-contact-form.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 28 Jan 2020 08:43:57 GMT -->
+<head>
+	<title>Contact Us</title>
+<!-- define some style elements-->
+<style>
+label,a, body 
+{
+	font-family : Arial, Helvetica, sans-serif;
+	font-size : 14px; 
+}
+.err
+{
+	font-family : Verdana, Helvetica, sans-serif;
+	font-size : 12px;
+	color: red;
+}
+</style>	
+<!-- a helper script for vaidating the form-->
+<script language="JavaScript" src="scripts/gen_validatorv31.js" type="text/javascript"></script>	
+  </head>
+
+<body>
+<div id='contact_form_errorloc' class='err'></div>
+<form method="POST" name="contact_form" 
+action="http://www.inoximporters.com/form/web-contact-form.php"> 
+<p>
+<label for='message'>Company Name:</label> <br>
+<input type="text" name="company" value=''>
+</p>
+<p>
+<label for='name'>Name: </label><br>
+<input type="text" name="name" value=''>
+</p>
+<p>
+<label for='email'>Email: </label><br>
+<input type="text" name="email" value=''>
+</p>
+<p>
+<label for='message'>Tel:</label> <br>
+<input type="text" name="tel" value=''></p>
+<p>
+<label for='message'>Requirement:</label> <br>
+<textarea name="message" rows=8 cols=25></textarea>
+</p>
+<p>
+<img src="captcha_code_filefb87.jpg?rand=296380591" id='captchaimg' ><br>
+<label for='message'>Enter the code above here :</label><br>
+<input id="6_letters_code" name="6_letters_code" type="text"><br>
+<small>Can't read the image? click <a href='javascript: refreshCaptcha();'>here</a> to refresh</small>
+</p>
+<input type="submit" value="Submit" name='submit'>
+</form>
+<script language="JavaScript">
+// Code for validating the form
+// Visit http://www.javascript-coder.com/html-form/javascript-form-validation.phtml
+// for details
+var frmvalidator  = new Validator("contact_form");
+//remove the following two lines if you like error message box popups
+frmvalidator.EnableOnPageErrorDisplaySingleBox();
+frmvalidator.EnableMsgsTogether();
+
+frmvalidator.addValidation("name","req","Please provide your name"); 
+frmvalidator.addValidation("email","req","Please provide your email"); 
+frmvalidator.addValidation("email","email","Please enter a valid email address"); 
+</script>
+<script language='JavaScript' type='text/javascript'>
+function refreshCaptcha()
+{
+	var img = document.img['captchaimg'];
+	img.src = img.src.substring(0,img.src.lastIndexOf("?"))+"?rand="+Math.random()*1000;
+}
+</script>
+</body>
+
+<!-- Mirrored from www.inoximporters.com/form/web-contact-form.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 28 Jan 2020 08:43:59 GMT -->
+</html>
